@@ -1,0 +1,14 @@
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ConsoleApplication.exe.config
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ConsoleApplication.exe
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ConsoleApplication.pdb
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ApprovalTests.dll
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ApprovalUtilities.dll
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\nunit.framework.dll
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ApprovalTests.pdb
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ApprovalTests.xml
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ApprovalUtilities.pdb
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\ApprovalUtilities.xml
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\bin\Debug\nunit.framework.xml
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\obj\x86\Debug\ConsoleApplication.exe
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\obj\x86\Debug\ConsoleApplication.pdb
+C:\Users\Jaume\Downloads\GildedRose-Refactoring-Kata-master\GildedRose-Refactoring-Kata-master\csharp\obj\x86\Debug\GildedRose.csprojResolveAssemblyReference.cache
