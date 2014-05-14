@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
+    <Compile Include="AgedBrieItemUpdaterStrategy.cs" />
     <Compile Include="DefaultItemUpdaterStrategy.cs" />
     <Compile Include="EmptyItemUpdaterStrategy.cs" />
     <Compile Include="GildedRose.cs" />
@@ -82,7 +83,7 @@
     <Compile Include="ItemTypeExtenssions.cs" />
     <Compile Include="ItemUpdater.cs" />
     <Compile Include="ItemUpdaterStrategyBase.cs" />
-    <Compile Include="SpecialItemUpdaterStrategy.cs" />
+    <Compile Include="BackstageItemUpdaterStrategy.cs" />
     <Compile Include="TextTestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
