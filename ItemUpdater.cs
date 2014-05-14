@@ -2,21 +2,6 @@ namespace GildedRose
 {
     internal class ItemUpdater<T> where T : Item
     {
-        private static bool IsSulfuras(Item item)
-        {
-            return item.Name == "Sulfuras, Hand of Ragnaros";
-        }
-
-        private static bool IsAgedBrie(Item item)
-        {
-            return item.Name == "Aged Brie";
-        }
-
-        private static bool IsBackstage(Item item)
-        {
-            return item.Name == "Backstage passes to a TAFKAL80ETC concert";
-        }
-
         private static bool IsExpired(Item item)
         {
             return item.SellIn < 0;
@@ -24,7 +9,7 @@ namespace GildedRose
 
         private static void DecreaseSellIn(Item item)
         {
-            if (!IsSulfuras(item))
+            if (!item.IsSulfuras())
             {
                 item.SellIn--;
             }
@@ -34,7 +19,7 @@ namespace GildedRose
         {
             if (!HasQuality(item)) return;
 
-            if (!IsSulfuras(item))
+            if (!item.IsSulfuras())
             {
                 item.Quality--;
             }
@@ -55,7 +40,7 @@ namespace GildedRose
 
         private static bool IsExpirable(Item item)
         {
-            return (!IsAgedBrie(item) && !IsBackstage(item));
+            return (!item.IsAgedBrie() && !item.IsBackstage());
         }
 
         public static void UpdateQuality(T item)
@@ -68,7 +53,7 @@ namespace GildedRose
             {
                 IncreaseQuality(item);
 
-                if (IsBackstage(item))
+                if (item.IsBackstage())
                 {
                     if (item.SellIn < 11)
                     {
@@ -92,13 +77,13 @@ namespace GildedRose
                 return;
             }
 
-            if (IsAgedBrie(item))
+            if (item.IsAgedBrie())
             {
                 IncreaseQuality(item);
                 return;
             }
 
-            if (IsBackstage(item))
+            if (item.IsBackstage())
             {
                 item.Quality = 0;
                 return;
