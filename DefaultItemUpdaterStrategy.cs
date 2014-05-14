@@ -7,6 +7,8 @@
             if (IsExpirable(item))
             {
                 DecreaseQuality(item);
+                if (!HasExpired(item)) return;
+                DecreaseQuality(item);
             }
             else
             {
@@ -24,26 +26,21 @@
                         IncreaseQuality(item);
                     }
                 }
-            }
 
-            if (!IsGoingToExpire(item)) return;
+                if (!HasExpired(item)) return;
 
-            if (IsExpirable(item))
-            {
-                DecreaseQuality(item);
-                return;
-            }
 
-            if (item.IsAgedBrie())
-            {
-                IncreaseQuality(item);
-                return;
-            }
+                if (item.IsAgedBrie())
+                {
+                    IncreaseQuality(item);
+                    return;
+                }
 
-            if (item.IsBackstage())
-            {
-                item.Quality = 0;
-                return;
+                if (item.IsBackstage())
+                {
+                    item.Quality = 0;
+                    return;
+                }
             }
         }
 
@@ -52,9 +49,9 @@
             DecreaseSellIn(item);
         }
 
-        private static bool IsGoingToExpire(Item item)
+        private static bool HasExpired(Item item)
         {
-            return item.SellIn - 1 < 0;
+            return item.SellIn <= 0;
         }
 
         private static void DecreaseSellIn(Item item)
