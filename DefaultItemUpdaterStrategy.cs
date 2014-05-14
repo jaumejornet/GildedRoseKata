@@ -26,9 +26,7 @@
                 }
             }
 
-            DecreaseSellIn(item);
-
-            if (!IsExpired(item)) return;
+            if (!IsGoingToExpire(item)) return;
 
             if (IsExpirable(item))
             {
@@ -51,11 +49,12 @@
 
         public void UpdateSellIn(Item item)
         {
+            DecreaseSellIn(item);
         }
 
-        private static bool IsExpired(Item item)
+        private static bool IsGoingToExpire(Item item)
         {
-            return item.SellIn < 0;
+            return item.SellIn - 1 < 0;
         }
 
         private static void DecreaseSellIn(Item item)
