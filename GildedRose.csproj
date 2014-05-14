@@ -73,8 +73,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
+    <Compile Include="DefaultItemUpdaterStrategy.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
+    <Compile Include="IItemUpdaterStrategy.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemTypeExtenssions.cs" />
     <Compile Include="ItemUpdater.cs" />
