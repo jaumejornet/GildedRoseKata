@@ -80,6 +80,7 @@
     <Compile Include="Item.cs" />
     <Compile Include="ItemTypeExtenssions.cs" />
     <Compile Include="ItemUpdater.cs" />
+    <Compile Include="SpecialItemUpdaterStrategy.cs" />
     <Compile Include="TextTestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
