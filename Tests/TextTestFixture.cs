@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 
-namespace GildedRose
+namespace GildedRose.Tests
 {
 	class Program
 	{

@@ -1,4 +1,4 @@
-namespace GildedRose
+namespace GildedRose.Application
 {
     internal class ItemUpdater<T> where T : Item
     {

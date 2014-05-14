@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace GildedRose
+namespace GildedRose.Application
 {
     internal class BackstageItemUpdaterStrategy : ItemUpdaterStrategyBase
     {

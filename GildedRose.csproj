@@ -72,19 +72,19 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApprovalTest.cs" />
-    <Compile Include="AgedBrieItemUpdaterStrategy.cs" />
-    <Compile Include="DefaultItemUpdaterStrategy.cs" />
-    <Compile Include="EmptyItemUpdaterStrategy.cs" />
+    <Compile Include="Tests\ApprovalTest.cs" />
+    <Compile Include="Application\AgedBrieItemUpdaterStrategy.cs" />
+    <Compile Include="Application\DefaultItemUpdaterStrategy.cs" />
+    <Compile Include="Application\EmptyItemUpdaterStrategy.cs" />
     <Compile Include="GildedRose.cs" />
-    <Compile Include="GildedRoseTest.cs" />
-    <Compile Include="IItemUpdaterStrategy.cs" />
+    <Compile Include="Tests\GildedRoseTest.cs" />
+    <Compile Include="Application\IItemUpdaterStrategy.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="ItemTypeExtenssions.cs" />
-    <Compile Include="ItemUpdater.cs" />
-    <Compile Include="ItemUpdaterStrategyBase.cs" />
-    <Compile Include="BackstageItemUpdaterStrategy.cs" />
-    <Compile Include="TextTestFixture.cs" />
+    <Compile Include="Application\ItemTypeExtenssions.cs" />
+    <Compile Include="Application\ItemUpdater.cs" />
+    <Compile Include="Application\ItemUpdaterStrategyBase.cs" />
+    <Compile Include="Application\BackstageItemUpdaterStrategy.cs" />
+    <Compile Include="Tests\TextTestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -1,4 +1,4 @@
-﻿namespace GildedRose
+﻿namespace GildedRose.Application
 {
     public interface IItemUpdaterStrategy
     {

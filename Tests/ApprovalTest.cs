@@ -1,12 +1,7 @@
-﻿using System;
-using System.IO;
-using System.Text;
-using GildedRose;
+﻿using ApprovalTests.Reporters;
 using NUnit.Framework;
-using ApprovalTests.Reporters;
-using ApprovalTests;
 
-namespace GildedRoseTests
+namespace GildedRose.Tests
 {
 	[TestFixture]
 	[UseReporter(typeof(NUnitReporter))]

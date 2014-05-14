@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GildedRose
+﻿namespace GildedRose.Application
 {
     internal abstract class ItemUpdaterStrategyBase : IItemUpdaterStrategy
     {
