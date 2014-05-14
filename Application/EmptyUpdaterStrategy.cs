@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Application
 {
-    internal class EmptyItemUpdaterStrategy : IItemUpdaterStrategy
+    internal class EmptyUpdaterStrategy : IUpdaterStrategy
     {
         public void UpdateQuality(Item item)
         {

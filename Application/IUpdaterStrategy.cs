@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Application
 {
-    public interface IItemUpdaterStrategy
+    public interface IUpdaterStrategy
     {
         void UpdateQuality(Item item);
 

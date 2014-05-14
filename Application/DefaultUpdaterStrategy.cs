@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Application
 {
-    internal class DefaultItemUpdaterStrategy : ItemUpdaterStrategyBase
+    internal class DefaultUpdaterStrategy : UpdaterStrategyBase
     {
         public override void UpdateQuality(Item item)
         {

@@ -73,17 +73,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests\ApprovalTest.cs" />
-    <Compile Include="Application\AgedBrieItemUpdaterStrategy.cs" />
-    <Compile Include="Application\DefaultItemUpdaterStrategy.cs" />
-    <Compile Include="Application\EmptyItemUpdaterStrategy.cs" />
+    <Compile Include="Application\AgedBrieUpdaterStrategy.cs" />
+    <Compile Include="Application\DefaultUpdaterStrategy.cs" />
+    <Compile Include="Application\EmptyUpdaterStrategy.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="Tests\GildedRoseTest.cs" />
-    <Compile Include="Application\IItemUpdaterStrategy.cs" />
+    <Compile Include="Application\IUpdaterStrategy.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Application\ItemTypeExtenssions.cs" />
-    <Compile Include="Application\ItemUpdater.cs" />
-    <Compile Include="Application\ItemUpdaterStrategyBase.cs" />
-    <Compile Include="Application\BackstageItemUpdaterStrategy.cs" />
+    <Compile Include="Application\UpdaterContext.cs" />
+    <Compile Include="Application\UpdaterStrategyBase.cs" />
+    <Compile Include="Application\BackstageUpdaterStrategy.cs" />
     <Compile Include="Tests\TextTestFixture.cs" />
   </ItemGroup>
   <ItemGroup>

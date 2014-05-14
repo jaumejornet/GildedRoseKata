@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace GildedRose.Application
 {
-    internal class BackstageItemUpdaterStrategy : ItemUpdaterStrategyBase
+    internal class BackstageUpdaterStrategy : UpdaterStrategyBase
     {
         private static readonly int[] Limits = { 50, 10, 5 };
 
