@@ -72,6 +72,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\ItemQualityExtensions.cs" />
     <Compile Include="Tests\ApprovalTest.cs" />
     <Compile Include="Application\AgedBrieUpdaterStrategy.cs" />
     <Compile Include="Application\DefaultUpdaterStrategy.cs" />
@@ -92,6 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\Strategies\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

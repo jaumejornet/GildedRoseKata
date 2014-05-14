@@ -2,6 +2,8 @@
 {
     internal abstract class UpdaterStrategyBase : IUpdaterStrategy
     {
+        private const int SellInExpiration = 0;
+
         public abstract void UpdateQuality(Item item);
 
         public void UpdateSellIn(Item item)
@@ -11,7 +13,7 @@
 
         protected static bool HasExpired(Item item)
         {
-            return item.SellIn <= 0;
+            return item.SellIn <= SellInExpiration;
         }
 
         private static void DecreaseSellIn(Item item)

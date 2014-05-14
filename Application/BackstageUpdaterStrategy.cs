@@ -5,7 +5,7 @@ namespace GildedRose.Application
 {
     internal class BackstageUpdaterStrategy : UpdaterStrategyBase
     {
-        private static readonly int[] Limits = { 50, 10, 5 };
+        private static readonly int[] IncreasingLimits = { 50, 10, 5 };
 
         public override void UpdateQuality(Item item)
         {
@@ -15,14 +15,13 @@ namespace GildedRose.Application
                 return;
             }
 
-            var count = Limits.Where(i => item.SellIn <= i).Count();
-            IncreaseQuality(item, count);
+            var count = GetIncreaseCount(item);
+            item.IncreaseQuality(count);
         }
 
-        private static void IncreaseQuality(Item item, int number)
+        private static int GetIncreaseCount(Item item)
         {
-            item.Quality += number;
-            item.Quality = Math.Min(item.Quality, 50);
+            return IncreasingLimits.Where(i => item.SellIn <= i).Count();
         }
     }
 }

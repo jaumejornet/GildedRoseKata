@@ -4,19 +4,11 @@ namespace GildedRose.Application
     {
         public override void UpdateQuality(Item item)
         {
-            IncreaseQuality(item);
+            item.IncreaseQuality();
 
             if (HasExpired(item))
             {
-                IncreaseQuality(item);
-            }
-        }
-
-        private static void IncreaseQuality(Item item)
-        {
-            if (item.Quality < 50)
-            {
-                item.Quality++;
+                item.IncreaseQuality();
             }
         }
     }
