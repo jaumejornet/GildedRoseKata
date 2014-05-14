@@ -74,12 +74,14 @@
   <ItemGroup>
     <Compile Include="ApprovalTest.cs" />
     <Compile Include="DefaultItemUpdaterStrategy.cs" />
+    <Compile Include="EmptyItemUpdaterStrategy.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="IItemUpdaterStrategy.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemTypeExtenssions.cs" />
     <Compile Include="ItemUpdater.cs" />
+    <Compile Include="ItemUpdaterStrategyBase.cs" />
     <Compile Include="SpecialItemUpdaterStrategy.cs" />
     <Compile Include="TextTestFixture.cs" />
   </ItemGroup>

@@ -4,6 +4,7 @@ namespace GildedRose
     {
         private static readonly IItemUpdaterStrategy defaultStrategy = new DefaultItemUpdaterStrategy();
         private static readonly IItemUpdaterStrategy specialStrategy = new SpecialItemUpdaterStrategy();
+        private static readonly IItemUpdaterStrategy emptyStrategy = new EmptyItemUpdaterStrategy();
 
         public static void UpdateQuality(T item)
         {
@@ -14,6 +15,11 @@ namespace GildedRose
 
         private static IItemUpdaterStrategy GetStrategy(Item item)
         {
+            if (item.IsSulfuras())
+            {
+                return emptyStrategy;
+            }
+
             if (IsExpirable(item))
             {
                 return defaultStrategy;

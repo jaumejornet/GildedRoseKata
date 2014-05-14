@@ -7,17 +7,15 @@
             DecreaseQuality(item);
             if (HasExpired(item))
             {
-                DecreaseQuality(item);    
+                DecreaseQuality(item);
             }
         }
 
         private static void DecreaseQuality(Item item)
         {
-            if (!HasQuality(item)) return;
-
-            if (!item.IsSulfuras())
+            if (HasQuality(item))
             {
-                item.Quality--;
+                item.Quality--;    
             }
         }
 
