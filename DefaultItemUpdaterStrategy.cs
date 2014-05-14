@@ -1,31 +1,13 @@
 ﻿namespace GildedRose
 {
-    internal class DefaultItemUpdaterStrategy : IItemUpdaterStrategy
+    internal class DefaultItemUpdaterStrategy : ItemUpdaterStrategyBase
     {
-        public void UpdateQuality(Item item)
+        public override void UpdateQuality(Item item)
         {
             DecreaseQuality(item);
             if (HasExpired(item))
             {
                 DecreaseQuality(item);    
-            }
-        }
-
-        public void UpdateSellIn(Item item)
-        {
-            DecreaseSellIn(item);
-        }
-
-        private static bool HasExpired(Item item)
-        {
-            return item.SellIn <= 0;
-        }
-
-        private static void DecreaseSellIn(Item item)
-        {
-            if (!item.IsSulfuras())
-            {
-                item.SellIn--;
             }
         }
 
