@@ -85,6 +85,8 @@
     <Compile Include="Application\UpdaterContext.cs" />
     <Compile Include="Application\UpdaterStrategyBase.cs" />
     <Compile Include="Application\BackstageUpdaterStrategy.cs" />
+    <Compile Include="Tests\Strategies\EmptyUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\StrategyTestBase.cs" />
     <Compile Include="Tests\TextTestFixture.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,9 +96,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\Strategies\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />

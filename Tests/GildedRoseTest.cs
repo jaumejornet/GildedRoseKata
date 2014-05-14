@@ -69,9 +69,9 @@ namespace GildedRose.Tests
             Assert.AreEqual(expectedSellin, items[0].SellIn);
         }
 
-        private static List<Item> ArangeAndActGildedRose(string itemName, int actualSellin, int initialQuality)
+        private static List<Item> ArangeAndActGildedRose(string itemName, int sellIn, int quality)
         {
-            var items = new List<Item> { new Item { Name = itemName, SellIn = actualSellin, Quality = initialQuality } };
+            var items = new List<Item> { new Item { Name = itemName, SellIn = sellIn, Quality = quality } };
             var app = new GildedRose(items);
             app.UpdateQuality();
 
