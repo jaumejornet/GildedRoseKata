@@ -1,7 +1,7 @@
 ﻿using ApprovalTests.Reporters;
 using NUnit.Framework;
 
-namespace GildedRose.Tests
+namespace GildedRose.Tests.Legacy
 {
 	[TestFixture]
 	[UseReporter(typeof(NUnitReporter))]

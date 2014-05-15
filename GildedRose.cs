@@ -16,7 +16,8 @@ namespace GildedRose
 
         public void UpdateQuality()
         {
-            _items.ToList().ForEach(UpdaterContext.UpdateQuality);
+            var updater = new UpdaterContext();
+            _items.ToList().ForEach(updater.UpdateQuality);
         }
     }
 }

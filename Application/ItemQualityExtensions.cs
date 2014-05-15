@@ -6,19 +6,20 @@ namespace GildedRose.Application
     {
         private const int MaxQuality = 50;
         private const int MinQuality = 0;
-        public static void SetQuality(this Item item, int quality)
+    
+        public static void IncreaseQuality(this Item item, int increment = 1)
         {
-            item.Quality = Math.Max(Math.Min(MaxQuality, quality), MinQuality);
+            item.Quality = Math.Min(MaxQuality, item.Quality + increment);
         }
 
-        public static void IncreaseQuality(this Item item, int count = 1)
+        public static void DecreaseQuality(this Item item, int decrement = 1)
         {
-            item.SetQuality(item.Quality + count);
+            item.Quality = Math.Max(MinQuality, item.Quality - decrement);
         }
 
-        public static void DecreaseQuality(this Item item, int count = 1)
+        public static void ResetQuality(this Item item)
         {
-            item.SetQuality(item.Quality - count);
+            item.Quality = MinQuality;
         }
     }
 }

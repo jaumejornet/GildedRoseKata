@@ -44,6 +44,9 @@
       <HintPath>packages\ApprovalUtilities.3.0.5\lib\net35\ApprovalUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>packages\NUnitTestAdapter.1.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -73,11 +76,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\ItemQualityExtensions.cs" />
-    <Compile Include="Tests\ApprovalTest.cs" />
+    <Compile Include="Application\IUpdaterStrategyFactory.cs" />
+    <Compile Include="Application\UpdaterStrategyFactory.cs" />
+    <Compile Include="Tests\Legacy\ApprovalTest.cs" />
     <Compile Include="Application\AgedBrieUpdaterStrategy.cs" />
     <Compile Include="Application\DefaultUpdaterStrategy.cs" />
     <Compile Include="Application\EmptyUpdaterStrategy.cs" />
     <Compile Include="GildedRose.cs" />
+    <Compile Include="Tests\Extensions\ItemQualityExtensionsTest.cs" />
+    <Compile Include="Tests\Extensions\ItemTypeExtenssionsTest.cs" />
     <Compile Include="Tests\GildedRoseTest.cs" />
     <Compile Include="Application\IUpdaterStrategy.cs" />
     <Compile Include="Item.cs" />
@@ -85,9 +92,15 @@
     <Compile Include="Application\UpdaterContext.cs" />
     <Compile Include="Application\UpdaterStrategyBase.cs" />
     <Compile Include="Application\BackstageUpdaterStrategy.cs" />
+    <Compile Include="Tests\Strategies\AgedBrieUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\BackstageUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\DefaultUpdaterStrategyTest.cs" />
     <Compile Include="Tests\Strategies\EmptyUpdaterStrategyTest.cs" />
     <Compile Include="Tests\Strategies\StrategyTestBase.cs" />
-    <Compile Include="Tests\TextTestFixture.cs" />
+    <Compile Include="Tests\Legacy\TextTestFixture.cs" />
+    <Compile Include="Tests\Strategies\UpdaterContextTest.cs" />
+    <Compile Include="Tests\Strategies\UpdaterStrategyFactoryTest.cs" />
+    <Compile Include="Tests\TestStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

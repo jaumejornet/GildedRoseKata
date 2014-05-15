@@ -1,6 +1,6 @@
 ﻿namespace GildedRose.Application
 {
-    internal abstract class UpdaterStrategyBase : IUpdaterStrategy
+    public abstract class UpdaterStrategyBase : IUpdaterStrategy
     {
         private const int SellInExpiration = 0;
 

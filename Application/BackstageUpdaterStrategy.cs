@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace GildedRose.Application
 {
-    internal class BackstageUpdaterStrategy : UpdaterStrategyBase
+    public class BackstageUpdaterStrategy : UpdaterStrategyBase
     {
         private static readonly int[] IncreasingLimits = { 50, 10, 5 };
 
@@ -11,7 +11,7 @@ namespace GildedRose.Application
         {
             if (HasExpired(item))
             {
-                item.Quality = 0;
+                item.ResetQuality();
                 return;
             }
 

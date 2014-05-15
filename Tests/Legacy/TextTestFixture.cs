@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace GildedRose.Tests
+namespace GildedRose.Tests.Legacy
 {
 	class Program
 	{

@@ -6,55 +6,50 @@ namespace GildedRose.Tests
     [TestFixture]
     public class GildedRoseTest
     {
-        private const string DefaultItemName = "foo";
-        private const string SulfurasItemName = "Sulfuras, Hand of Ragnaros";
-        private const string AgedBrieItemName = "Aged Brie";
-        private const string BackstageItemName = "Backstage passes to a TAFKAL80ETC concert";
-
-        [TestCase(5, 4, TestName = "SellInShouldDecreased")]
+        [TestCase(5, 4, TestName = "SellInShouldDecreased", Category = TestStrings.GeneralCategoryName)]
         public void SellInChanges(int actualSellin, int expectedSellin)
         {
-            AssertSellInChange(DefaultItemName, actualSellin, expectedSellin, 5);
+            AssertSellInChange(TestStrings.DefaultItemName, actualSellin, expectedSellin, 5);
         }
 
-        [TestCase(4, 5, 4, TestName = "QualityShouldDecrease")]
-        [TestCase(4, 0, 0, TestName = "QualityShouldNotBeNegative")]
-        [TestCase(0, 3, 1, TestName = "QualityShouldDecreaseFasterWhenSellInIsZero")]
+        [TestCase(4, 5, 4, TestName = "QualityShouldDecrease", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(4, 0, 0, TestName = "QualityShouldNotBeNegative", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(0, 3, 1, TestName = "QualityShouldDecreaseFasterWhenSellInIsZero", Category = TestStrings.GeneralCategoryName)]
         public void QualityChanges(int actualSellin, int initialQuality, int expectedQuality)
         {
-            AssertQualityChange(DefaultItemName, actualSellin, initialQuality, expectedQuality);
+            AssertQualityChange(TestStrings.DefaultItemName, actualSellin, initialQuality, expectedQuality);
         }
 
-        [TestCase(5, 5, TestName = "SulfurasSellInIsNeverDecreased")]
+        [TestCase(5, 5, TestName = "SulfurasSellInIsNeverDecreased", Category = TestStrings.GeneralCategoryName)]
         public void SulfurasSellInChanges(int actualSellin, int expectedSellin)
         {
-            AssertSellInChange(SulfurasItemName, actualSellin, expectedSellin, 5);
+            AssertSellInChange(TestStrings.SulfurasItemName, actualSellin, expectedSellin, 5);
         }
 
-        [TestCase(1, 10, 10, TestName = "SulfurasQualityIsNeverDecreased")]
+        [TestCase(1, 10, 10, TestName = "SulfurasQualityIsNeverDecreased", Category = TestStrings.GeneralCategoryName)]
         public void SulfurasQualityChanges(int actualSellin, int initialQuality, int expectedQuality)
         {
-            AssertQualityChange(SulfurasItemName, actualSellin, initialQuality, expectedQuality);
+            AssertQualityChange(TestStrings.SulfurasItemName, actualSellin, initialQuality, expectedQuality);
         }
 
-        [TestCase(1, 1, 2, TestName = "AgedBrieQualityShouldIncrease")]
-        [TestCase(1, 50, 50, TestName = "AgedBrieQualityShouldNotBeGreaterThan50")]
+        [TestCase(1, 1, 2, TestName = "AgedBrieQualityShouldIncrease", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(1, 50, 50, TestName = "AgedBrieQualityShouldNotBeGreaterThan50", Category = TestStrings.GeneralCategoryName)]
         public void AgedBrieQualityChanges(int actualSellin, int initialQuality, int expectedQuality)
         {
-            AssertQualityChange(AgedBrieItemName, actualSellin, initialQuality, expectedQuality);
+            AssertQualityChange(TestStrings.AgedBrieItemName, actualSellin, initialQuality, expectedQuality);
         }
 
-        [TestCase(10, 10, 12, TestName = "BackStageShouldIncreaseQualityByTwoWhenTenDaysSellIn")]
-        [TestCase(8, 10, 12, TestName = "BackStageShouldIncreaseQualityByTwoWhenLessThanTenDaysSellIn")]
-        [TestCase(5, 10, 13, TestName = "BackStageShouldIncreaseQualityByThreeWhenFiveDaysSellIn")]
-        [TestCase(3, 10, 13, TestName = "BackStageShouldIncreaseQualityByThreeWhenLessThanFiveDaysSellIn")]
-        [TestCase(0, 10, 0, TestName = "BackStageShouldSetQualityToZeroWhenSellInIsZero")]
-        [TestCase(12, 50, 50, TestName = "BackStageQualityShouldNotBeGreaterThan50")]
-        [TestCase(8, 50, 50, TestName = "BackStageQualityShouldNotBeGreaterThan50EvenWhenLessThanTenDaysSellIn")]
-        [TestCase(3, 50, 50, TestName = "BackStageQualityShouldNotBeGreaterThan50EvenWhenLessThanFiveDaysSellIn")]
+        [TestCase(10, 10, 12, TestName = "BackStageShouldIncreaseQualityByTwoWhenTenDaysSellIn", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(8, 10, 12, TestName = "BackStageShouldIncreaseQualityByTwoWhenLessThanTenDaysSellIn", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(5, 10, 13, TestName = "BackStageShouldIncreaseQualityByThreeWhenFiveDaysSellIn", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(3, 10, 13, TestName = "BackStageShouldIncreaseQualityByThreeWhenLessThanFiveDaysSellIn", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(0, 10, 0, TestName = "BackStageShouldSetQualityToZeroWhenSellInIsZero", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(12, 50, 50, TestName = "BackStageQualityShouldNotBeGreaterThan50", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(8, 50, 50, TestName = "BackStageQualityShouldNotBeGreaterThan50EvenWhenLessThanTenDaysSellIn", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(3, 50, 50, TestName = "BackStageQualityShouldNotBeGreaterThan50EvenWhenLessThanFiveDaysSellIn", Category = TestStrings.GeneralCategoryName)]
         public void BackstageQualityChanges(int actualSellin, int initialQuality, int expectedQuality)
         {
-            AssertQualityChange(BackstageItemName, actualSellin, initialQuality, expectedQuality);
+            AssertQualityChange(TestStrings.BackstageItemName, actualSellin, initialQuality, expectedQuality);
         }
 
         private static void AssertQualityChange(string itemName, int actualSellin, int initialQuality, int expectedQuality)

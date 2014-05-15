@@ -6,34 +6,39 @@ namespace GildedRose.Application
 {
     internal class UpdaterContext
     {
-        private static readonly Dictionary<IUpdaterStrategy, Func<Item, bool>> Strategies = CreateStrategies();
-       
-        public static void UpdateQuality(Item item)
+        private readonly Dictionary<Func<Item, bool>, IUpdaterStrategy> strategies;
+        private readonly IUpdaterStrategyFactory factory;
+
+        public UpdaterContext() : this(new UpdaterStrategyFactory())
+        {
+        }
+
+        public UpdaterContext(IUpdaterStrategyFactory factory)
+        {
+            this.factory = factory;
+            this.strategies = this.CreateStrategies();
+        }
+
+        public void UpdateQuality(Item item)
         {
             var strategy = GetStrategy(item);
             strategy.UpdateQuality(item);
             strategy.UpdateSellIn(item);
         }
 
-        private static IUpdaterStrategy GetStrategy(Item item)
+        internal IUpdaterStrategy GetStrategy(Item item)
         {
-            var strategy = Strategies.Where(kp => kp.Value(item)).Select(kp => kp.Key).FirstOrDefault();
-            if (strategy == null)
-            {
-                throw new InvalidOperationException("Strategy not found");
-            }
-
-            return strategy;
+            return this.strategies.Where(kp => kp.Key(item)).Select(kp => kp.Value).FirstOrDefault();
         }
 
-        private static Dictionary<IUpdaterStrategy, Func<Item, bool>> CreateStrategies()
+        private Dictionary<Func<Item, bool>, IUpdaterStrategy> CreateStrategies()
         {
-            return new Dictionary<IUpdaterStrategy, Func<Item, bool>>
+            return new Dictionary<Func<Item, bool>, IUpdaterStrategy>
                    {
-                       {new EmptyUpdaterStrategy(), i => i.IsSulfuras()},
-                       {new BackstageUpdaterStrategy(), i => i.IsBackstage()},
-                       {new AgedBrieUpdaterStrategy(), i => i.IsAgedBrie()},
-                       {new DefaultUpdaterStrategy(), i => true},
+                       {i => i.IsSulfuras(), this.factory.CreateEmptyStrategy()},
+                       {i => i.IsBackstage(), this.factory.CreateBackstageStrategy()},
+                       {i => i.IsAgedBrie(), this.factory.CreateAgedBrieStrategy()},
+                       { i => true, this.factory.CreateDefaultStrategy()},
                    };
         }
     }

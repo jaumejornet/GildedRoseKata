@@ -1,6 +1,6 @@
 namespace GildedRose.Application
 {
-    internal class AgedBrieUpdaterStrategy : UpdaterStrategyBase
+    public class AgedBrieUpdaterStrategy : UpdaterStrategyBase
     {
         public override void UpdateQuality(Item item)
         {
