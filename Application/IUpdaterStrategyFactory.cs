@@ -6,5 +6,6 @@
         IUpdaterStrategy CreateEmptyStrategy();
         IUpdaterStrategy CreateAgedBrieStrategy();
         IUpdaterStrategy CreateBackstageStrategy();
+        IUpdaterStrategy CreateConjuredStrategy();
     }
 }

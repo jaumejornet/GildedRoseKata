@@ -21,5 +21,10 @@
         {
             return new BackstageUpdaterStrategy();
         }
+
+        public IUpdaterStrategy CreateConjuredStrategy()
+        {
+            return new ConjuredUpdaterStrategy();
+        }
     }
 }

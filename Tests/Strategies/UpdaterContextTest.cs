@@ -33,6 +33,12 @@ namespace GildedRose.Tests.Strategies
             AssertSameStrategy(itemName, f => f.CreateBackstageStrategy());
         }
 
+        [TestCase(TestStrings.ConjuredItemName, TestName = "UpdaterContextGetsConjuredStrategy", Category = TestStrings.StrategiesCategoryName)]
+        public void GetsConjuredStrategy(string itemName)
+        {
+            AssertSameStrategy(itemName, f => f.CreateConjuredStrategy());
+        }
+
         [TestCase(TestName = "UpdaterContextCallsUpdateQualityAndSellIn", Category = TestStrings.StrategiesCategoryName)]
         public void CallsUpdateQualityAndSellIn()
         {
@@ -66,6 +72,7 @@ namespace GildedRose.Tests.Strategies
             factory.Setup(f => f.CreateEmptyStrategy());
             factory.Setup(f => f.CreateAgedBrieStrategy());
             factory.Setup(f => f.CreateBackstageStrategy());
+            factory.Setup(f => f.CreateConjuredStrategy());
             return factory;
         }
 

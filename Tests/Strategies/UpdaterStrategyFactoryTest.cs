@@ -38,5 +38,13 @@ namespace GildedRose.Tests.Strategies
             Assert.AreEqual(typeof(BackstageUpdaterStrategy), strategy.GetType());
         }
 
+        [TestCase(TestName = "UpdaterStrategyFactoryCreatesConjuredStrategy", Category = TestStrings.StrategiesCategoryName)]
+        public void ConjuredUpdaterStrategy()
+        {
+            var factory = new UpdaterStrategyFactory();
+            var strategy = factory.CreateConjuredStrategy();
+            Assert.AreEqual(typeof(ConjuredUpdaterStrategy), strategy.GetType());
+        }
+
     }
 }

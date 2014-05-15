@@ -38,6 +38,7 @@ namespace GildedRose.Application
                        {i => i.IsSulfuras(), this.factory.CreateEmptyStrategy()},
                        {i => i.IsBackstage(), this.factory.CreateBackstageStrategy()},
                        {i => i.IsAgedBrie(), this.factory.CreateAgedBrieStrategy()},
+                       {i => i.IsConjured(), this.factory.CreateConjuredStrategy()},
                        { i => true, this.factory.CreateDefaultStrategy()},
                    };
         }

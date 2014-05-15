@@ -32,5 +32,14 @@ namespace GildedRose.Tests.Extensions
             var actual = item.IsBackstage();
             Assert.AreEqual(expected, actual);
         }
+
+        [TestCase(TestStrings.DefaultItemName, false, TestName = "ItemTypeExtenssionsDefaultItemIsNotConjured", Category = TestStrings.ExtensionsCategoryName)]
+        [TestCase(TestStrings.ConjuredItemName, true, TestName = "ItemTypeExtenssionsBackstageItemIsConjured", Category = TestStrings.ExtensionsCategoryName)]
+        public void ConjuredChecking(string itemName, bool expected)
+        {
+            var item = new Item { Name = itemName };
+            var actual = item.IsConjured();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
