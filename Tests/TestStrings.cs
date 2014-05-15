@@ -10,5 +10,6 @@
         public const string SulfurasItemName = "Sulfuras, Hand of Ragnaros";
         public const string AgedBrieItemName = "Aged Brie";
         public const string BackstageItemName = "Backstage passes to a TAFKAL80ETC concert";
+        public const string ConjuredItemName = "Conjured";
     }
 }
