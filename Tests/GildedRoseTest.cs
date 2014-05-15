@@ -52,6 +52,14 @@ namespace GildedRose.Tests
             AssertQualityChange(TestStrings.BackstageItemName, actualSellin, initialQuality, expectedQuality);
         }
 
+        [TestCase(4, 5, 3, TestName = "ConjuredQualityShouldDecreaseTwice", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(4, 0, 0, TestName = "ConjuredQualityShouldNotBeNegative", Category = TestStrings.GeneralCategoryName)]
+        [TestCase(0, 5, 1, TestName = "ConjuredQualityShouldDecreaseFasterWhenSellInIsZero", Category = TestStrings.GeneralCategoryName)]
+        public void ConjuredQualityChanges(int actualSellin, int initialQuality, int expectedQuality)
+        {
+            AssertQualityChange(TestStrings.ConjuredItemName, actualSellin, initialQuality, expectedQuality);
+        }
+
         private static void AssertQualityChange(string itemName, int actualSellin, int initialQuality, int expectedQuality)
         {
             var items = ArangeAndActGildedRose(itemName, actualSellin, initialQuality);
