@@ -78,7 +78,6 @@
     <Compile Include="Application\ItemQualityExtensions.cs" />
     <Compile Include="Application\IUpdaterStrategyFactory.cs" />
     <Compile Include="Application\UpdaterStrategyFactory.cs" />
-    <Compile Include="Tests\Legacy\ApprovalTest.cs" />
     <Compile Include="Application\AgedBrieUpdaterStrategy.cs" />
     <Compile Include="Application\DefaultUpdaterStrategy.cs" />
     <Compile Include="Application\EmptyUpdaterStrategy.cs" />
@@ -97,7 +96,6 @@
     <Compile Include="Tests\Strategies\DefaultUpdaterStrategyTest.cs" />
     <Compile Include="Tests\Strategies\EmptyUpdaterStrategyTest.cs" />
     <Compile Include="Tests\Strategies\StrategyTestBase.cs" />
-    <Compile Include="Tests\Legacy\TextTestFixture.cs" />
     <Compile Include="Tests\Strategies\UpdaterContextTest.cs" />
     <Compile Include="Tests\Strategies\UpdaterStrategyFactoryTest.cs" />
     <Compile Include="Tests\TestStrings.cs" />
