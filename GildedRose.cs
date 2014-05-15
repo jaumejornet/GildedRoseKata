@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using GildedRose.Application;
 
 namespace GildedRose
 {
@@ -15,7 +16,8 @@ namespace GildedRose
 
         public void UpdateQuality()
         {
-            _items.ToList().ForEach(ItemUpdater<Item>.UpdateQuality);
+            var updater = new UpdaterContext();
+            _items.ToList().ForEach(updater.UpdateQuality);
         }
     }
 }

@@ -4,13 +4,15 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{BE4E87FD-A08E-40AF-919F-1277AEE0FE3E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>ConsoleApplication</AssemblyName>
+    <AssemblyName>GildedRose</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">.\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +36,9 @@
   <PropertyGroup>
     <RootNamespace>GildedRose</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ApprovalTests">
       <HintPath>packages\ApprovalTests.3.0.5\lib\net40\ApprovalTests.dll</HintPath>
@@ -42,6 +47,9 @@
       <HintPath>packages\ApprovalUtilities.3.0.5\lib\net35\ApprovalUtilities.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moq">
+      <HintPath>packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.core">
       <HintPath>packages\NUnitTestAdapter.1.0\lib\nunit.core.dll</HintPath>
       <Private>False</Private>
@@ -70,12 +78,32 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApprovalTest.cs" />
+    <Compile Include="Application\ConjuredUpdaterStrategy.cs" />
+    <Compile Include="Application\ItemQualityExtensions.cs" />
+    <Compile Include="Application\IUpdaterStrategyFactory.cs" />
+    <Compile Include="Application\UpdaterStrategyFactory.cs" />
+    <Compile Include="Application\AgedBrieUpdaterStrategy.cs" />
+    <Compile Include="Application\DefaultUpdaterStrategy.cs" />
+    <Compile Include="Application\EmptyUpdaterStrategy.cs" />
     <Compile Include="GildedRose.cs" />
-    <Compile Include="GildedRoseTest.cs" />
+    <Compile Include="Tests\Extensions\ItemQualityExtensionsTest.cs" />
+    <Compile Include="Tests\Extensions\ItemTypeExtenssionsTest.cs" />
+    <Compile Include="Tests\GildedRoseTest.cs" />
+    <Compile Include="Application\IUpdaterStrategy.cs" />
     <Compile Include="Item.cs" />
-    <Compile Include="ItemUpdater.cs" />
-    <Compile Include="TextTestFixture.cs" />
+    <Compile Include="Application\ItemTypeExtenssions.cs" />
+    <Compile Include="Application\UpdaterContext.cs" />
+    <Compile Include="Application\UpdaterStrategyBase.cs" />
+    <Compile Include="Application\BackstageUpdaterStrategy.cs" />
+    <Compile Include="Tests\Strategies\AgedBrieUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\BackstageUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\ConjuredUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\DefaultUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\EmptyUpdaterStrategyTest.cs" />
+    <Compile Include="Tests\Strategies\StrategyTestBase.cs" />
+    <Compile Include="Tests\Strategies\UpdaterContextTest.cs" />
+    <Compile Include="Tests\Strategies\UpdaterStrategyFactoryTest.cs" />
+    <Compile Include="Tests\TestStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -84,8 +112,16 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
 </Project>
